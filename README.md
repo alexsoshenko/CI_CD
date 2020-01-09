@@ -81,10 +81,10 @@ During the development cycle, a variety of supporting branches are used:
 
 Read more about [Git Flow branching strategy](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 
-![](https://github.com/alexsoshenko/CI_CD/tree/master/images/GitFlow.png)
+![](https://github.com/alexsoshenko/CI_CD/blob/master/images/GitFlow.png)
 > Git Flow
 
-![](https://github.com/alexsoshenko/CI_CD/tree/master/images/GitFlowDetailed.png)
+![](https://github.com/alexsoshenko/CI_CD/blob/master/images/GitFlowDetailed.png)
 
 ### GitHub Flow
 
@@ -167,7 +167,7 @@ Semantic Versioning is a 3-component number in the format of X.Y.Z, where :
 
 So, SemVer is of the form Major.Minor.Patch.
 
-![](https://github.com/alexsoshenko/CI_CD/tree/master/images/SemVer.png)
+![](https://github.com/alexsoshenko/CI_CD/blob/master/images/SemVer.png)
 
 **Working:** The goal of SemVer was to bring some sanity to the management of rapidly moving software release targets. As discussed above, 3 numbers i.e, Major, Minor and Patch are required to identify a software version. For example, if we take version 5.12.2, then it has a major version of 5, a minor version of 12 and a patch version of 2. Below given are the scenarios when you should bump the value of X, Y and Z.
 
@@ -257,13 +257,13 @@ After that add one more commit to Contoso project (just change something) and ag
 
 The main focus of next figure is to provide detailed view on CI pipepline definition.
 
-![](https://github.com/alexsoshenko/CI_CD/tree/master/images/CIFlow.jpg)
+![](https://github.com/alexsoshenko/CI_CD/blob/master/images/CIFlow.jpg)
 
 > CI pipeline design
 
 The build system is designed to implement the CI/CD Process which is shown on the following figure:
 
-![](https://github.com/alexsoshenko/CI_CD/tree/master/images/CI_CDProcessforNetApplication.jpg)
+![](https://github.com/alexsoshenko/CI_CD/blob/master/images/CI_CDProcessforNetApplication.jpg)
 
 > CI/CD process for .Net Application
 
@@ -414,7 +414,7 @@ echo "BUILD_BUILDNUMBER: $BUILD_BUILDNUMBER"
 
 After execution of your script you have to see next picture in Azure DevOps. It's really importambe in **BuildNumber** column to see generated **Build Number**.
 
-![](https://github.com/alexsoshenko/CI_CD/tree/master/images/azureDevOpsVersioning.JPG)
+![](https://github.com/alexsoshenko/CI_CD/blob/master/images/azureDevOpsVersioning.JPG)
 
 ### 2. Get Environment Variables
 
@@ -435,11 +435,11 @@ foreach($var in $environmentVars)
 
 If you use Build Agents provided by Microsoft, better to add this step. If you have configured your own build agent - you can skip it. Use Nuget 4.3.0 tool installer (or later).
 
-![](https://github.com/alexsoshenko/CI_CD/tree/master/images/useNuGet430Installer.JPG)
+![](https://github.com/alexsoshenko/CI_CD/blob/master/images/useNuGet430Installer.JPG)
 
 ### 4. Restore NuGet packages
 
-![](https://github.com/alexsoshenko/CI_CD/tree/master/images/NuGetRestore.JPG)
+![](https://github.com/alexsoshenko/CI_CD/blob/master/images/NuGetRestore.JPG)
 
 During application development developers use 3rd party libraries. It can be NuGet, NPM and etc. For Contoso solution we also have to restore all dependencies. In our case it's NuGet packages.
 
@@ -455,11 +455,11 @@ Download **NuGet.exe** file and play with cmd.All detailed info about Nuget you 
 
 ### 5. Prepare SonarQube analysis step
 
-![](https://github.com/alexsoshenko/CI_CD/tree/master/images/prepareAnalysisSQ.JPG)
+![](https://github.com/alexsoshenko/CI_CD/blob/master/images/prepareAnalysisSQ.JPG)
 
 This step is optional.
 Fill the gaps with next build variables:
-![](https://github.com/alexsoshenko/CI_CD/tree/master/images/SQcfg.JPG)
+![](https://github.com/alexsoshenko/CI_CD/blob/master/images/SQcfg.JPG)
 
 - **Project Key** - SonarQube project unique key,
 - **Project Name** - SonarQube project name, here better to combine variables like on screen. You will be able to keep track of all changes in one branch,
@@ -467,7 +467,7 @@ Fill the gaps with next build variables:
 
 ### 6. Clean & Build Solution with MSBuild
 
-![](https://github.com/alexsoshenko/CI_CD/tree/master/images/buildMSBuild.JPG)
+![](https://github.com/alexsoshenko/CI_CD/blob/master/images/buildMSBuild.JPG)
 
 Why is important to clean build?
 
@@ -499,43 +499,43 @@ Specify next parameters for build with MSBuild:
 
 ### 7. Use Visual Studio Test Platform Installer for preparing platform for running Unit test
 
-![](https://github.com/alexsoshenko/CI_CD/tree/master/images/VSTestPI.JPG)
+![](https://github.com/alexsoshenko/CI_CD/blob/master/images/VSTestPI.JPG)
 
 This Step is optional.
 If you use Build Agents provided by Microsoft, better to add this step. If you have configured your own build agent - you can skip it.
 
 ### 8. Run Unit Tests
 
-![](https://github.com/alexsoshenko/CI_CD/tree/master/images/VStest_testAssemblies.JPG)
+![](https://github.com/alexsoshenko/CI_CD/blob/master/images/VStest_testAssemblies.JPG)
 
 If project already has Unit tests add this build step.
 
 Fill the gaps with next build variables:
 
-![](https://github.com/alexsoshenko/CI_CD/tree/master/images/RunUnitcfg.JPG)
+![](https://github.com/alexsoshenko/CI_CD/blob/master/images/RunUnitcfg.JPG)
 
 **Test Files** - list of Test files
 **Search Folder** - folder, where tests will be run
 
-![](https://github.com/alexsoshenko/CI_CD/tree/master/images/RunUnitcfg2.JPG)
+![](https://github.com/alexsoshenko/CI_CD/blob/master/images/RunUnitcfg2.JPG)
 
 Do not forget to enable Code Coverage.
 
 ### 9. Run Code Analysis
 
-![](https://github.com/alexsoshenko/CI_CD/tree/master/images/RunCodeAnalysis.JPG)
+![](https://github.com/alexsoshenko/CI_CD/blob/master/images/RunCodeAnalysis.JPG)
 
 This Step is optional.
 
 ### 10. Publish Quality Gate Result
 
-![](https://github.com/alexsoshenko/CI_CD/tree/master/images/PublishQGResult.JPG)
+![](https://github.com/alexsoshenko/CI_CD/blob/master/images/PublishQGResult.JPG)
 
 This Step is optional.
 
 ### 11. Create NuGet package
 
-![](https://github.com/alexsoshenko/CI_CD/tree/master/images/NuGetPack.JPG)
+![](https://github.com/alexsoshenko/CI_CD/blob/master/images/NuGetPack.JPG)
 
 As Build result we will have NuGet package. So for NuGet package creation add this build step.
 Technically speaking, a NuGet package is just a ZIP file that's been renamed with the .nupkg extension and whose contents match certain conventions. This topic describes the detailed process of creating a package that meets those conventions. For a focused walkthrough, refer to [Quickstart: create and publish a package](https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-visual-studio?tabs=netcore-cli).
@@ -545,7 +545,7 @@ NuGet package have to contain **build artifacts** + **DeploymentScripts** folder
 
 ### 12. Push NuGet file to Azure feed repository
 
-![](https://github.com/alexsoshenko/CI_CD/tree/master/images/NuGetPush.JPG)
+![](https://github.com/alexsoshenko/CI_CD/blob/master/images/NuGetPush.JPG)
 
 Use Azure Feed like artifactory storage (storage for the build artifacts). Push already created NuGet package (build artifact) to Feed.
 **Do NOT use drop for this purposes!**
@@ -558,7 +558,7 @@ Continuous deployment is a strategy for software releases wherein any code commi
 
 Continuous deployment eliminates the human safeguards against unproven code in live software. It should only be implemented when the development and IT teams rigorously adhere to production-ready development practices and thorough testing, and when they apply sophisticated, real-time monitoring in production to discover any issues with new releases.
 
-![](https://github.com/alexsoshenko/CI_CD/tree/master/images/CDFlow.jpg)
+![](https://github.com/alexsoshenko/CI_CD/blob/master/images/CDFlow.jpg)
 
 **Release** - set of commands, which explain how to deploy package to environment (consist of package + deployment configuration).
 
@@ -582,4 +582,4 @@ Create Release all time, when **NEW NuGet package** appears in Azure Feed Reposi
 3. Unpack NuGet package (optional)
 4. Push to Azure App Service
 
-![](https://github.com/alexsoshenko/CI_CD/tree/master/images/PushToAppService.JPG)
+![](https://github.com/alexsoshenko/CI_CD/blob/master/images/PushToAppService.JPG)
